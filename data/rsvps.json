@@ -1,0 +1,18 @@
+[
+  {
+    "guestId": "e9fd94ea-e595-481f-ae74-c1dcaa382245",
+    "attending": true,
+    "mealChoice": "",
+    "allergies": "Cherreis",
+    "companionName": "",
+    "companionMeal": "",
+    "familyMeals": {
+      "1dd5144e-eb33-4bad-9fb7-28587c37fefd": "beef",
+      "216f7cd4-a8c7-4d5d-bbdd-cfad784264f0": "beef"
+    },
+    "phone": "5142999292",
+    "song": "Dadju",
+    "message": "Congratz",
+    "submittedAt": "2026-04-04T05:49:37.100Z"
+  }
+]

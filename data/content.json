@@ -1,0 +1,200 @@
+{
+  "intro": {
+    "en": {
+      "greeting": "Dear {name},",
+      "headline": "Are Getting Married.",
+      "saveTheDate": "Save the Date.",
+      "date": "June 26, 2026"
+    },
+    "fr": {
+      "greeting": "Cher(e) {name},",
+      "headline": "Se marient.",
+      "saveTheDate": "Réservez la date.",
+      "date": "26 Juin 2026"
+    },
+    "namesLine1": "Sarah",
+    "namesLine2": "Arman"
+  },
+  "location": {
+    "en": {
+      "header": "Location",
+      "venue": "Maison Principale",
+      "address": "872 Rue du Couvent, Montréal",
+      "dateTime": "June 26, 2026 — 5:00 PM",
+      "description": "We would be honoured to have you join us at this beautiful venue to celebrate our special day. Please arrive 30 minutes before the ceremony begins.",
+      "directions": "Get Directions",
+      "addCalendar": "Add to Calendar"
+    },
+    "fr": {
+      "header": "Lieu",
+      "venue": "Maison Principale",
+      "address": "872 Rue du Couvent, Montréal",
+      "dateTime": "26 Juin 2026 — 17h00",
+      "description": "Nous serions honorés de vous accueillir dans ce magnifique lieu pour célébrer notre jour spécial. Veuillez arriver 30 minutes avant le début de la cérémonie.",
+      "directions": "Itinéraire",
+      "addCalendar": "Ajouter au calendrier"
+    }
+  },
+  "dresscode": {
+    "en": {
+      "header": "Dress Code",
+      "line1": "We kindly ask you to dress formally\nto join us on this very special day.",
+      "line2": "Please avoid wearing white, as it is\nreserved for the bride.",
+      "line3": "Black is also a color to avoid."
+    },
+    "fr": {
+      "header": "Code vestimentaire",
+      "line1": "Nous vous prions de vous habiller de\nmanière formelle pour cette journée spéciale.",
+      "line2": "Merci de ne pas porter de blanc,\ncette couleur est réservée à la mariée.",
+      "line3": "Le noir est également une couleur à éviter."
+    }
+  },
+  "countdown": {
+    "en": {
+      "header": "Countdown",
+      "subtitle": "To the most special day of our lives",
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Minutes",
+      "seconds": "Seconds"
+    },
+    "fr": {
+      "header": "Compte à rebours",
+      "subtitle": "Vers le jour le plus spécial de notre vie",
+      "days": "Jours",
+      "hours": "Heures",
+      "minutes": "Minutes",
+      "seconds": "Secondes"
+    }
+  },
+  "orderOfDay": {
+    "en": {
+      "header": "Order of the Day",
+      "items": [
+        {
+          "time": "17:00",
+          "title": "Arrival & Welcome Drinks",
+          "desc": "Reception and welcome cocktails at the venue"
+        },
+        {
+          "time": "18:00",
+          "title": "Ceremony",
+          "desc": "The most special moment of the day"
+        },
+        {
+          "time": "19:00 to 21:00",
+          "title": "Cocktail Hour & Dinner",
+          "desc": "Party"
+        },
+        {
+          "time": "Until 1 AM",
+          "title": "Let's dance the night away!",
+          "desc": ""
+        }
+      ]
+    },
+    "fr": {
+      "header": "Déroulement de la journée",
+      "items": [
+        {
+          "time": "17:00",
+          "title": "Arrivée & Cocktail de bienvenue",
+          "desc": "Réception et cocktails de bienvenue sur place"
+        },
+        {
+          "time": "18:00",
+          "title": "Cérémonie",
+          "desc": "Le moment le plus spécial de la journée"
+        },
+        {
+          "time": "19:00 a 21:00",
+          "title": "Cocktail & Dîner",
+          "desc": "La fête"
+        },
+        {
+          "time": "Jusqu'à 1h",
+          "title": "Dansons toute la nuit !",
+          "desc": ""
+        }
+      ]
+    }
+  },
+  "menu": {
+    "en": {
+      "menuTitle": "Menu",
+      "starter": "Starter",
+      "mainCourse": "Main Course",
+      "or": "or",
+      "dessertHeader": "Dessert",
+      "dessertLine": "Wedding cake or Tiramisu",
+      "dishes": {
+        "fattoush": {
+          "name": "Fattoush",
+          "desc": "Romaine lettuce, Roma tomatoes, cherry tomatoes,\ncucumber, mint, parsley, radishes, red peppers\nHomemade pita chips, Lime oil & sumac dressing"
+        },
+        "chicken": {
+          "name": "Herb Crusted Chicken",
+          "desc": "Lemon & herb crusted chicken supreme, lemon crème fraîche.\nFresh herb mash with confit garlic, grilled lemon zest asparagus"
+        },
+        "salmon": {
+          "name": "Grilled Salmon",
+          "desc": "Grilled salmon, soy-maple glaze\nBaked broccoli with toasted sesame seeds, roasted yellow\nbeets & red onions"
+        },
+        "filet": {
+          "name": "Filet Mignon",
+          "desc": "AAA Beef Filet Mignon, cherry wine reduction\nGrilled asparagus, Dauphinoise potatoes"
+        },
+        "risotto": {
+          "name": "Mushroom Risotto (V)",
+          "desc": ""
+        }
+      }
+    },
+    "fr": {
+      "menuTitle": "Menu",
+      "starter": "Entrée",
+      "mainCourse": "Plat principal",
+      "or": "ou",
+      "dessertHeader": "Dessert",
+      "dessertLine": "Gâteau de mariage ou Tiramisu",
+      "dishes": {
+        "fattoush": {
+          "name": "Fattoush",
+          "desc": "Laitue romaine, tomates Roma, tomates cerises,\nconcombre, menthe, persil, radis, poivrons rouges\nChips de pita maison, huile de lime & vinaigrette au sumac"
+        },
+        "chicken": {
+          "name": "Poulet en croûte d'herbes",
+          "desc": "Suprême de poulet en croûte de citron et herbes, crème fraîche au citron.\nPurée aux herbes fraîches et ail confit, asperges grillées au zeste de citron"
+        },
+        "salmon": {
+          "name": "Saumon grillé",
+          "desc": "Saumon grillé, glaçage soja-érable\nBrocoli rôti aux graines de sésame, betteraves jaunes\net oignons rouges rôtis"
+        },
+        "filet": {
+          "name": "Filet Mignon",
+          "desc": "Filet Mignon de bœuf AAA, réduction au vin de cerise\nAsperges grillées, pommes Dauphinoise"
+        },
+        "risotto": {
+          "name": "Risotto aux champignons (V)",
+          "desc": ""
+        }
+      }
+    }
+  },
+  "rsvp": {
+    "en": {
+      "header": "RSVP",
+      "subtitle": "We hope you can make it",
+      "willAttend": "Will you attend?",
+      "yes": "Yes, I'll be there!",
+      "no": "Sorry, I can't make it"
+    },
+    "fr": {
+      "header": "RSVP",
+      "subtitle": "Nous espérons que vous pourrez être présent(e)",
+      "willAttend": "Serez-vous présent(e) ?",
+      "yes": "Oui, je serai là !",
+      "no": "Désolé(e), je ne pourrai pas venir"
+    }
+  }
+}

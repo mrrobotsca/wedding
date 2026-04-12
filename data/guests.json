@@ -1,0 +1,78 @@
+[
+  {
+    "id": "e9fd94ea-e595-481f-ae74-c1dcaa382245",
+    "greetingName": "Adibi Family",
+    "inviteType": "family",
+    "allowCompanion": false,
+    "familyMembers": [
+      {
+        "id": "1dd5144e-eb33-4bad-9fb7-28587c37fefd",
+        "name": "Maryam"
+      },
+      {
+        "id": "216f7cd4-a8c7-4d5d-bbdd-cfad784264f0",
+        "name": "Khodadad"
+      }
+    ],
+    "createdAt": "2026-04-04T05:17:22.955Z"
+  },
+  {
+    "id": "b3ff80f5-bef9-49d5-bbd6-9b3a722b6883",
+    "greetingName": "Nasr Family",
+    "inviteType": "family",
+    "allowCompanion": false,
+    "familyMembers": [
+      {
+        "id": "111d3b3e-65f2-44f3-be5c-1f5a0e9dc72e",
+        "name": "Batool"
+      },
+      {
+        "id": "1496eb96-261c-4012-9ddc-bb228186bd35",
+        "name": "Majid"
+      },
+      {
+        "id": "7009133a-db07-4a70-b428-6dfa70cdb334",
+        "name": "Dorsa"
+      },
+      {
+        "id": "f43b9c0c-c846-4522-a408-1203b722f252",
+        "name": "Darya"
+      }
+    ],
+    "createdAt": "2026-04-04T05:17:45.765Z"
+  },
+  {
+    "id": "4fd4f1ca-a68a-4e37-8aed-72b4f74c11a4",
+    "greetingName": "Grant Family",
+    "inviteType": "family",
+    "allowCompanion": false,
+    "familyMembers": [
+      {
+        "id": "300e32a7-ff47-40fd-8388-a74a7855ce53",
+        "name": "Zahra"
+      },
+      {
+        "id": "eb2a8da1-527f-4545-8938-44da26aae1a9",
+        "name": "Danny"
+      }
+    ],
+    "createdAt": "2026-04-04T14:40:59.918Z"
+  },
+  {
+    "id": "77af0579-4065-4ac1-adb9-680cbe192128",
+    "greetingName": "hkh",
+    "inviteType": "family",
+    "allowCompanion": false,
+    "familyMembers": [
+      {
+        "id": "ddcca699-0a90-4004-bc4e-2e7174649ec9",
+        "name": "ete"
+      },
+      {
+        "id": "ac841595-384b-4720-b740-abd9574ffa0e",
+        "name": "gj"
+      }
+    ],
+    "createdAt": "2026-04-08T17:40:22.591Z"
+  }
+]
