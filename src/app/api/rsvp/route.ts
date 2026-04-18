@@ -6,7 +6,7 @@ export async function GET(req: NextRequest) {
   const guestId = req.nextUrl.searchParams.get("guestId");
   if (!guestId) return NextResponse.json({ error: "Missing guestId" }, { status: 400 });
 
-  const rsvp = getRSVP(guestId);
+  const rsvp = await getRSVP(guestId);
   if (!rsvp) return NextResponse.json({ submitted: false });
   return NextResponse.json({ submitted: true, ...rsvp });
 }
@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
   const body = await req.json();
   if (!body.guestId) return NextResponse.json({ error: "Missing guestId" }, { status: 400 });
 
-  const guest = getGuest(body.guestId);
+  const guest = await getGuest(body.guestId);
   if (!guest) return NextResponse.json({ error: "Invalid invite" }, { status: 404 });
 
   const rsvp = {
@@ -32,9 +32,9 @@ export async function POST(req: NextRequest) {
     message: body.message || "",
     submittedAt: new Date().toISOString(),
   };
-  saveRSVP(rsvp);
+  await saveRSVP(rsvp);
 
-  logActivity({
+  await logActivity({
     guestId: body.guestId,
     event: "rsvp_submitted",
     timestamp: new Date().toISOString(),

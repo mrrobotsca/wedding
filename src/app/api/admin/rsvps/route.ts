@@ -1,21 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getRSVPs, getGuests, validateAdminToken } from "@/lib/db";
 
-function checkAuth(req: NextRequest) {
+async function checkAuth(req: NextRequest) {
   const token = req.headers.get("x-admin-token");
-  if (!token || !validateAdminToken(token)) {
+  if (!token || !(await validateAdminToken(token))) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   return null;
 }
 
 export async function GET(req: NextRequest) {
-  const err = checkAuth(req);
+  const err = await checkAuth(req);
   if (err) return err;
 
   const format = req.nextUrl.searchParams.get("format");
-  const rsvps = getRSVPs();
-  const guests = getGuests();
+  const rsvps = await getRSVPs();
+  const guests = await getGuests();
 
   // CSV export for catering
   if (format === "csv") {

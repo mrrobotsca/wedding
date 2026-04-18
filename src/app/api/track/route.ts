@@ -7,13 +7,13 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Missing guestId or event" }, { status: 400 });
   }
 
-  const guest = getGuest(body.guestId);
+  const guest = await getGuest(body.guestId);
   if (!guest) return NextResponse.json({ error: "Invalid guest" }, { status: 404 });
 
   const forwarded = req.headers.get("x-forwarded-for");
   const ip = forwarded?.split(",")[0]?.trim() || req.headers.get("x-real-ip") || "unknown";
 
-  logActivity({
+  await logActivity({
     guestId: body.guestId,
     event: body.event,
     userAgent: req.headers.get("user-agent") || undefined,

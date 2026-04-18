@@ -1,52 +1,4 @@
-import fs from "fs";
-import path from "path";
-
-const DATA_DIR = path.join(process.cwd(), "data");
-
-function ensureDir() {
-  if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
-}
-
-function readJSON<T>(file: string, fallback: T): T {
-  ensureDir();
-  const p = path.join(DATA_DIR, file);
-  if (!fs.existsSync(p)) return fallback;
-  return JSON.parse(fs.readFileSync(p, "utf-8"));
-}
-
-function writeJSON(file: string, data: unknown) {
-  ensureDir();
-  fs.writeFileSync(path.join(DATA_DIR, file), JSON.stringify(data, null, 2));
-}
-
-// ── Admin Config ──
-
-export interface AdminConfig {
-  token: string;    // UUID for admin panel URL
-  password: string; // admin password
-}
-
-const DEFAULT_ADMIN: AdminConfig = {
-  token: "a1b2c3d4-admin-5678-9012-abcdef123456",
-  password: "wedding2026",
-};
-
-export function getAdminConfig(): AdminConfig {
-  const config = readJSON<AdminConfig | null>("admin.json", null);
-  if (!config) {
-    writeJSON("admin.json", DEFAULT_ADMIN);
-    return DEFAULT_ADMIN;
-  }
-  return config;
-}
-
-export function validateAdminToken(token: string): boolean {
-  return getAdminConfig().token === token;
-}
-
-export function validateAdminPassword(password: string): boolean {
-  return getAdminConfig().password === password;
-}
+import { supabaseAdmin } from "./supabase";
 
 // ── Types ──
 
@@ -58,7 +10,7 @@ export interface FamilyMember {
 }
 
 export interface Guest {
-  id: string;          // UUID — used in invite link
+  id: string;
   greetingName: string;
   inviteType: InviteType;
   allowCompanion: boolean;
@@ -93,63 +45,10 @@ export interface ActivityLog {
   timestamp: string;
 }
 
-// ── Guests ──
-
-export function getGuests(): Guest[] {
-  return readJSON<Guest[]>("guests.json", []);
+export interface AdminConfig {
+  token: string;
+  password: string;
 }
-
-export function getGuest(id: string): Guest | undefined {
-  return getGuests().find((g) => g.id === id);
-}
-
-export function saveGuest(guest: Guest) {
-  const guests = getGuests();
-  const idx = guests.findIndex((g) => g.id === guest.id);
-  if (idx >= 0) guests[idx] = guest;
-  else guests.push(guest);
-  writeJSON("guests.json", guests);
-  return guest;
-}
-
-export function deleteGuest(id: string) {
-  writeJSON("guests.json", getGuests().filter((g) => g.id !== id));
-}
-
-// ── RSVPs ──
-
-export function getRSVPs(): RSVP[] {
-  return readJSON<RSVP[]>("rsvps.json", []);
-}
-
-export function getRSVP(guestId: string): RSVP | undefined {
-  return getRSVPs().find((r) => r.guestId === guestId);
-}
-
-export function saveRSVP(rsvp: RSVP) {
-  const rsvps = getRSVPs();
-  const idx = rsvps.findIndex((r) => r.guestId === rsvp.guestId);
-  if (idx >= 0) rsvps[idx] = rsvp;
-  else rsvps.push(rsvp);
-  writeJSON("rsvps.json", rsvps);
-  return rsvp;
-}
-
-// ── Activity Logs ──
-
-export function getActivityLogs(guestId?: string): ActivityLog[] {
-  const logs = readJSON<ActivityLog[]>("activity.json", []);
-  if (guestId) return logs.filter((l) => l.guestId === guestId);
-  return logs;
-}
-
-export function logActivity(log: ActivityLog) {
-  const logs = getActivityLogs();
-  logs.push(log);
-  writeJSON("activity.json", logs);
-}
-
-// ── Site Content ──
 
 export interface SiteContent {
   intro: {
@@ -184,11 +83,156 @@ export interface SiteContent {
   };
 }
 
-export function getSiteContent(): SiteContent | null {
-  return readJSON<SiteContent | null>("content.json", null);
+// ── Admin Config ──
+
+export async function getAdminConfig(): Promise<AdminConfig> {
+  const { data } = await supabaseAdmin.from("admin_config").select("*").eq("id", "main").single();
+  return data || { token: "a1b2c3d4-admin-5678-9012-abcdef123456", password: "wedding2026" };
 }
 
-export function saveSiteContent(content: SiteContent) {
-  writeJSON("content.json", content);
+export async function validateAdminToken(token: string): Promise<boolean> {
+  const config = await getAdminConfig();
+  return config.token === token;
+}
+
+export async function validateAdminPassword(password: string): Promise<boolean> {
+  const config = await getAdminConfig();
+  return config.password === password;
+}
+
+// ── Guests ──
+
+function mapGuest(row: any): Guest {
+  return {
+    id: row.id,
+    greetingName: row.greeting_name,
+    inviteType: row.invite_type,
+    allowCompanion: row.allow_companion,
+    familyMembers: row.family_members || [],
+    createdAt: row.created_at,
+  };
+}
+
+export async function getGuests(): Promise<Guest[]> {
+  const { data } = await supabaseAdmin.from("guests").select("*").order("created_at", { ascending: true });
+  return (data || []).map(mapGuest);
+}
+
+export async function getGuest(id: string): Promise<Guest | undefined> {
+  const { data } = await supabaseAdmin.from("guests").select("*").eq("id", id).single();
+  return data ? mapGuest(data) : undefined;
+}
+
+export async function saveGuest(guest: { id?: string; greetingName: string; inviteType: string; allowCompanion: boolean; familyMembers: FamilyMember[] }): Promise<Guest> {
+  const row = {
+    greeting_name: guest.greetingName,
+    invite_type: guest.inviteType,
+    allow_companion: guest.allowCompanion,
+    family_members: guest.familyMembers,
+  };
+
+  if (guest.id) {
+    const { data } = await supabaseAdmin.from("guests").update(row).eq("id", guest.id).select().single();
+    return mapGuest(data);
+  } else {
+    const { data } = await supabaseAdmin.from("guests").insert(row).select().single();
+    return mapGuest(data);
+  }
+}
+
+export async function deleteGuest(id: string): Promise<void> {
+  await supabaseAdmin.from("guests").delete().eq("id", id);
+}
+
+// ── RSVPs ──
+
+function mapRsvp(row: any): RSVP {
+  return {
+    guestId: row.guest_id,
+    attending: row.attending,
+    mealChoice: row.meal_choice,
+    allergies: row.allergies,
+    companionName: row.companion_name,
+    companionMeal: row.companion_meal,
+    familyMeals: row.family_meals || {},
+    phone: row.phone,
+    song: row.song,
+    message: row.message,
+    submittedAt: row.submitted_at,
+  };
+}
+
+export async function getRSVPs(): Promise<RSVP[]> {
+  const { data } = await supabaseAdmin.from("rsvps").select("*");
+  return (data || []).map(mapRsvp);
+}
+
+export async function getRSVP(guestId: string): Promise<RSVP | undefined> {
+  const { data } = await supabaseAdmin.from("rsvps").select("*").eq("guest_id", guestId).single();
+  return data ? mapRsvp(data) : undefined;
+}
+
+export async function saveRSVP(rsvp: RSVP): Promise<RSVP> {
+  const row = {
+    guest_id: rsvp.guestId,
+    attending: rsvp.attending,
+    meal_choice: rsvp.mealChoice,
+    allergies: rsvp.allergies,
+    companion_name: rsvp.companionName,
+    companion_meal: rsvp.companionMeal,
+    family_meals: rsvp.familyMeals,
+    phone: rsvp.phone,
+    song: rsvp.song,
+    message: rsvp.message,
+    submitted_at: rsvp.submittedAt,
+  };
+
+  const { data } = await supabaseAdmin.from("rsvps").upsert(row, { onConflict: "guest_id" }).select().single();
+  return mapRsvp(data);
+}
+
+// ── Activity Logs ──
+
+export async function getActivityLogs(guestId?: string): Promise<ActivityLog[]> {
+  let query = supabaseAdmin.from("activity_logs").select("*").order("created_at", { ascending: true });
+  if (guestId) query = query.eq("guest_id", guestId);
+  const { data } = await query;
+  return (data || []).map((row: any) => ({
+    guestId: row.guest_id,
+    event: row.event,
+    userAgent: row.user_agent,
+    ip: row.ip,
+    fingerprint: row.fingerprint,
+    device: row.device,
+    screenSize: row.screen_size,
+    language: row.language,
+    platform: row.platform,
+    timestamp: row.created_at,
+  }));
+}
+
+export async function logActivity(log: ActivityLog): Promise<void> {
+  await supabaseAdmin.from("activity_logs").insert({
+    guest_id: log.guestId,
+    event: log.event,
+    user_agent: log.userAgent,
+    ip: log.ip,
+    fingerprint: log.fingerprint,
+    device: log.device,
+    screen_size: log.screenSize,
+    language: log.language,
+    platform: log.platform,
+  });
+}
+
+// ── Site Content ──
+
+export async function getSiteContent(): Promise<SiteContent | null> {
+  const { data } = await supabaseAdmin.from("site_content").select("content").eq("id", "main").single();
+  return data?.content || null;
+}
+
+export async function saveSiteContent(content: SiteContent): Promise<SiteContent> {
+  await supabaseAdmin.from("site_content").upsert({ id: "main", content }, { onConflict: "id" });
   return content;
 }
