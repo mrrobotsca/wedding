@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import type { DraggableItem } from "./AdminOverlay";
-import ScrollDown from "./ScrollDown";
 import { sectionBase } from "./responsive";
 
 const TEXT = {
@@ -55,15 +54,33 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
 
   return (
     <section suppressHydrationWarning style={{ ...sectionBase, justifyContent: "space-between", padding: 0, overflow: "hidden" }}>
+      {/* GIF with transparent background */}
+      <img
+        src="/no_bg_video.gif"
+        alt=""
+        style={{
+          position: "absolute",
+          top: "-20vh",
+          left: 0,
+          right: 0,
+          bottom: "20vh",
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: 1,
+          pointerEvents: "none",
+        }}
+      />
+
       <div style={{
         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between",
         width: "100%", height: "100%", padding: "1vh 5vw 2vh", position: "relative", zIndex: 10, boxSizing: "border-box",
       }}>
 
-        {/* Video animation overlay */}
-        {/* Video background */}
-
         {/* BOX 2: All content equally spaced */}
+        {/* Spacer to push text under chandelier (55% of height) */}
+        <div style={{ flexShrink: 0, height: "45vh" }} />
+
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-evenly", textAlign: "center", flex: 1, width: "100%", padding: "0", zIndex: 10 }}>
 
           {/* Dear Guest */}
