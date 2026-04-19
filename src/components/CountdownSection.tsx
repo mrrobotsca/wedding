@@ -41,7 +41,25 @@ export default function CountdownSection({ lang, content }: CountdownSectionProp
   ];
 
   return (
-    <section style={{ ...sectionBase, justifyContent: "flex-start", paddingTop: "1vh" }}>
+    <section style={{ ...sectionBase, justifyContent: "flex-start", paddingTop: "1vh", position: "relative", overflow: "visible" }}>
+      {/* Lights overlay on top of logo */}
+      <img
+        src="/lights3.png"
+        alt=""
+        style={{
+          position: "absolute",
+          top: "-15vh",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "200%",
+          height: "auto",
+          objectFit: "contain",
+          zIndex: 20,
+          pointerEvents: "none",
+          opacity: 1,
+          filter: "sepia(100%) saturate(50%) hue-rotate(-10deg) brightness(90%)",
+        }}
+      />
       <div style={topBorder} />
 
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", maxWidth: "85vw", width: "100%", position: "relative", zIndex: 10 }}>
