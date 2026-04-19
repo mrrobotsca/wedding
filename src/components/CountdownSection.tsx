@@ -48,7 +48,7 @@ export default function CountdownSection({ lang, content }: CountdownSectionProp
         alt=""
         style={{
           position: "absolute",
-          top: "-15vh",
+          top: "calc(-15vh - 5px)",
           left: "50%",
           transform: "translateX(-50%)",
           width: "200%",
@@ -57,7 +57,7 @@ export default function CountdownSection({ lang, content }: CountdownSectionProp
           zIndex: 20,
           pointerEvents: "none",
           opacity: 1,
-          filter: "sepia(100%) saturate(50%) hue-rotate(-10deg) brightness(90%)",
+          filter: "brightness(0) saturate(100%) invert(72%) sepia(32%) saturate(460%) hue-rotate(349deg) brightness(89%) contrast(88%)",
         }}
       />
       <div style={topBorder} />
@@ -65,7 +65,7 @@ export default function CountdownSection({ lang, content }: CountdownSectionProp
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", maxWidth: "85vw", width: "100%", position: "relative", zIndex: 10 }}>
         {/* Logo */}
         <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}>
-          <img src="/logo3.png" alt="" style={{ width: "auto", height: r(160, 240), objectFit: "contain", marginBottom: r(8, 24) }} />
+          <img src="/logo3.png" alt="" style={{ width: "auto", height: r(160, 240), objectFit: "contain", marginBottom: r(8, 24), marginTop: 20 }} />
         </motion.div>
 
         {/* Header */}
