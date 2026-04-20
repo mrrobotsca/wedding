@@ -297,10 +297,6 @@ export default function MenuSection({ lang, content }: MenuSectionProps) {
         </motion.p>
       </div>
 
-      {/* BOX 3: Divider */}
-      <div style={{ flexShrink: 0, display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 10, marginTop: 30 }}>
-        <img src="/divider-nobg.png" alt="" style={{ width: "60vw", maxWidth: 300, height: "auto", objectFit: "contain", pointerEvents: "none", marginTop: -60, filter: "sepia(40%) hue-rotate(-10deg) saturate(80%) brightness(95%)" }} />
-      </div>
     </section>
   );
 }
