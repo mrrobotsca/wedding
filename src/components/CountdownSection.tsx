@@ -83,6 +83,7 @@ export default function CountdownSection({ lang, content }: CountdownSectionProp
         </motion.div>
       </div>
 
+      <img src="/divider-nobg.png" alt="" style={{ position: "absolute", bottom: "6vh", left: "50%", transform: "translateX(-50%)", width: "60vw", maxWidth: 300, height: "auto", objectFit: "contain", zIndex: 10, pointerEvents: "none", filter: "sepia(40%) hue-rotate(-10deg) saturate(80%) brightness(95%)" }} />
     </section>
   );
 }
