@@ -54,7 +54,7 @@ export default function LocationSection({ lang, content }: LocationSectionProps)
         {/* BOX 1: Logo */}
         <div style={{ flexShrink: 0, display: "flex", flexDirection: "column", alignItems: "center",  }}>
           <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}>
-            <img src="/newlogo.png" alt="" style={{ width: "auto", height: "clamp(115px, 19vh, 195px)", objectFit: "contain", marginTop: 10, marginBottom: 20 }} />
+            <img src="/newlogo.png" alt="" style={{ width: "auto", height: "clamp(115px, 19vh, 195px)", objectFit: "contain", marginTop: 10, marginBottom: 25 }} />
           </motion.div>
         </div>
 
