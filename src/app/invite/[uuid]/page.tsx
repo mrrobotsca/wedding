@@ -127,7 +127,7 @@ export default function InvitePage() {
       }}>
         <div style={{
           position: "absolute", inset: 0,
-          backgroundImage: "url('/bg5.jpg')",
+          backgroundImage: "url('/bg9.jpg')",
           backgroundSize: "100% 100%",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
