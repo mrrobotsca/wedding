@@ -328,7 +328,7 @@ export default function RSVPSection({ lang, guest: guestProp, content }: RSVPSec
               width: "auto",
               height: "clamp(120px, 20vh, 200px)",
               objectFit: "contain",
-              marginBottom: -30,
+              marginBottom: 10,
             }}
           />
         </motion.div>

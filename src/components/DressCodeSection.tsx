@@ -43,7 +43,7 @@ export default function DressCodeSection({ lang, content }: DressCodeSectionProp
         {/* BOX 1: Logo */}
         <div style={{ flexShrink: 0, display: "flex", flexDirection: "column", alignItems: "center" }}>
           <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}>
-            <img src="/newlogo.png" alt="" style={{ width: "auto", height: "clamp(120px, 20vh, 200px)", objectFit: "contain", marginBottom: -30 }} />
+            <img src="/newlogo.png" alt="" style={{ width: "auto", height: "clamp(120px, 20vh, 200px)", objectFit: "contain", marginBottom: 10 }} />
           </motion.div>
         </div>
 
