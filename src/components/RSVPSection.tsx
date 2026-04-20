@@ -322,7 +322,7 @@ export default function RSVPSection({ lang, guest: guestProp, content }: RSVPSec
           transition={{ duration: 1 }}
         >
           <img
-            src="/logo3.png"
+            src="/newlogo.png"
             alt="Wedding Logo"
             style={{
               width: "auto",
