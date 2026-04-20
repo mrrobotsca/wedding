@@ -51,13 +51,13 @@ export default function CountdownSection({ lang, content }: CountdownSectionProp
         </motion.div>
 
         {/* Header */}
-        <motion.p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(22, 25), fontWeight: 400, color: "#000000", letterSpacing: "0.5em", textTransform: "uppercase", textDecoration: "underline", textDecorationColor: "#C8A97E", textUnderlineOffset: 6, paddingBottom: r(8, 16) }}
+        <motion.p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(22, 25), fontWeight: 400, color: "#000000", letterSpacing: "0.5em", textTransform: "uppercase", textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 6, paddingBottom: r(8, 16) }}
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}>
           {header}
         </motion.p>
 
         {/* Subtitle */}
-        <motion.p style={{ fontFamily: "'Great Vibes', cursive", fontSize: r(33, 47), color: "#C8A97E", letterSpacing: "0.05em", paddingBottom: r(110, 160) }}
+        <motion.p style={{ fontFamily: "'Great Vibes', cursive", fontSize: r(33, 47), color: "#b3985f", letterSpacing: "0.05em", paddingBottom: r(110, 160) }}
           initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.3 }}>
           {subtitle}
         </motion.p>
@@ -71,7 +71,7 @@ export default function CountdownSection({ lang, content }: CountdownSectionProp
                 <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(24, 36), fontWeight: 300, color: "#000000", lineHeight: 1, minWidth: r(36, 50), textAlign: "center" }}>
                   {mounted ? String(unit.value).padStart(2, "0") : "00"}
                 </span>
-                <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: r(21, 23), fontWeight: 500, color: "#C8A97E", letterSpacing: "0.05em", marginTop: r(4, 8) }}>
+                <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: r(21, 23), fontWeight: 500, color: "#b3985f", letterSpacing: "0.05em", marginTop: r(4, 8) }}>
                   {unit.label}
                 </span>
               </div>
@@ -83,7 +83,7 @@ export default function CountdownSection({ lang, content }: CountdownSectionProp
         </motion.div>
       </div>
 
-      <img src="/divider-nobg.png" alt="" style={{ position: "absolute", bottom: "6vh", left: "50%", transform: "translateX(-50%)", width: "60vw", maxWidth: 300, height: "auto", objectFit: "contain", zIndex: 10, pointerEvents: "none", filter: "sepia(40%) hue-rotate(-10deg) saturate(80%) brightness(95%)" }} />
+      <img src="/divider-nobg.png" alt="" style={{ position: "absolute", bottom: "6vh", left: "50%", transform: "translateX(-50%)", width: "60vw", maxWidth: 300, height: "auto", objectFit: "contain", zIndex: 10, pointerEvents: "none", filter: "sepia(60%) saturate(60%) hue-rotate(-5deg) brightness(85%)" }} />
     </section>
   );
 }

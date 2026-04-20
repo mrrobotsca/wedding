@@ -51,7 +51,7 @@ export default function DressCodeSection({ lang, content }: DressCodeSectionProp
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", flex: 1, width: "100%", padding: "10px 0" }}>
 
           {/* Header (top of box 2) */}
-          <motion.p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(22, 25), fontWeight: 400, color: "#000000", letterSpacing: "0.5em", textTransform: "uppercase", textDecoration: "underline", textDecorationColor: "#C8A97E", textUnderlineOffset: 6 }}
+          <motion.p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(22, 25), fontWeight: 400, color: "#000000", letterSpacing: "0.5em", textTransform: "uppercase", textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 6 }}
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}>
             {header}
           </motion.p>
@@ -81,7 +81,7 @@ export default function DressCodeSection({ lang, content }: DressCodeSectionProp
           </div>
 
           {/* Line 3 (bottom of box 2) */}
-          <motion.p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(16, 21), fontWeight: 300, color: "#000000", lineHeight: 1.8, fontStyle: "italic", textDecoration: "underline", textDecorationColor: "#C8A97E", textUnderlineOffset: 4 }}
+          <motion.p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(16, 21), fontWeight: 300, color: "#000000", lineHeight: 1.8, fontStyle: "italic", textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 4 }}
             initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.6 }}>
             {line3}
           </motion.p>
@@ -89,7 +89,7 @@ export default function DressCodeSection({ lang, content }: DressCodeSectionProp
 
         {/* BOX 3: Divider */}
         <div style={{ flexShrink: 0, display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <img src="/divider-nobg.png" alt="" style={{ width: "60vw", maxWidth: 300, height: "auto", objectFit: "contain", pointerEvents: "none", marginTop: -60, filter: "sepia(40%) hue-rotate(-10deg) saturate(80%) brightness(95%)" }} />
+          <img src="/divider-nobg.png" alt="" style={{ width: "60vw", maxWidth: 300, height: "auto", objectFit: "contain", pointerEvents: "none", marginTop: -60, filter: "sepia(60%) saturate(60%) hue-rotate(-5deg) brightness(85%)" }} />
         </div>
       </div>
 

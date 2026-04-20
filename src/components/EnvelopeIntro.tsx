@@ -87,12 +87,12 @@ export default function EnvelopeIntro({ onComplete }: EnvelopeIntroProps) {
           {/* Tap to enter — shown if autoplay blocked */}
           {needsTap && (
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16, zIndex: 10 }}>
-              <p style={{ fontFamily: "'Great Vibes', cursive", fontSize: 36, color: "#C8A97E" }}>
+              <p style={{ fontFamily: "'Great Vibes', cursive", fontSize: 36, color: "#b3985f" }}>
                 S &amp; A
               </p>
               <p style={{
                 fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 300,
-                color: "#C8A97E", letterSpacing: "0.2em", textTransform: "uppercase", opacity: 0.7,
+                color: "#b3985f", letterSpacing: "0.2em", textTransform: "uppercase", opacity: 0.7,
               }}>
                 Tap to enter
               </p>

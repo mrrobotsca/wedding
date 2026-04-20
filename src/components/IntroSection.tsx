@@ -104,9 +104,9 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: "clamp(40px, 7vw, 54px)", color: "#C8A97E", letterSpacing: "0.1em" }}>{name1}</span>
-              <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: "clamp(40px, 7vw, 54px)", color: "#C8A97E", letterSpacing: "0.1em", margin: "0 8px" }}>&</span>
-              <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: "clamp(40px, 7vw, 54px)", color: "#C8A97E", letterSpacing: "0.1em" }}>{name2}</span>
+              <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: "clamp(40px, 7vw, 54px)", color: "#b3985f", letterSpacing: "0.1em" }}>{name1}</span>
+              <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: "clamp(40px, 7vw, 54px)", color: "#b3985f", letterSpacing: "0.1em", margin: "0 8px" }}>&</span>
+              <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: "clamp(40px, 7vw, 54px)", color: "#b3985f", letterSpacing: "0.1em" }}>{name2}</span>
             </motion.div>
 
             <motion.div
@@ -131,7 +131,7 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
             <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 400, fontSize: 20, color: "#000000", letterSpacing: "0.15em" }}>
               {saveTheDate}
             </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, fontSize: 16, color: "#C8A97E", letterSpacing: "0.15em", marginTop: 4, textDecoration: "underline", textDecorationColor: "#C8A97E", textUnderlineOffset: 4 }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, fontSize: 16, color: "#b3985f", letterSpacing: "0.15em", marginTop: 4, textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 4 }}>
               {date}
             </p>
           </motion.div>
@@ -139,7 +139,7 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
 
         {/* BOX 3: Divider */}
         <div style={{ flexShrink: 0, display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <img src="/divider-nobg.png" alt="" style={{ width: "60vw", maxWidth: 300, height: "auto", objectFit: "contain", pointerEvents: "none", marginTop: -60, filter: "sepia(40%) hue-rotate(-10deg) saturate(80%) brightness(95%)" }} />
+          <img src="/divider-nobg.png" alt="" style={{ width: "60vw", maxWidth: 300, height: "auto", objectFit: "contain", pointerEvents: "none", marginTop: -60, filter: "sepia(60%) saturate(60%) hue-rotate(-5deg) brightness(85%)" }} />
         </div>
       </div>
 

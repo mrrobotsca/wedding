@@ -55,7 +55,7 @@ export default function OrderOfDaySection({ lang, content }: OrderOfDaySectionPr
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", flex: 1, width: "100%", padding: "10px 0" }}>
 
           {/* Header (top of box 2) */}
-          <motion.p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(22, 25), fontWeight: 400, color: "#000000", letterSpacing: "0.5em", textTransform: "uppercase", textDecoration: "underline", textDecorationColor: "#C8A97E", textUnderlineOffset: 6 }}
+          <motion.p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(22, 25), fontWeight: 400, color: "#000000", letterSpacing: "0.5em", textTransform: "uppercase", textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 6 }}
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
             {header}
           </motion.p>
@@ -75,7 +75,7 @@ export default function OrderOfDaySection({ lang, content }: OrderOfDaySectionPr
                   {item.time}
                 </p>
 
-                <p style={{ fontFamily: "'Great Vibes', cursive", fontSize: r(18, 30), color: "#C8A97E", letterSpacing: "0.05em", paddingBottom: item.desc ? r(1, 2) : 0 }}>
+                <p style={{ fontFamily: "'Great Vibes', cursive", fontSize: r(18, 30), color: "#b3985f", letterSpacing: "0.05em", paddingBottom: item.desc ? r(1, 2) : 0 }}>
                   {item.title}
                 </p>
 
@@ -91,7 +91,7 @@ export default function OrderOfDaySection({ lang, content }: OrderOfDaySectionPr
 
         {/* BOX 3: Divider */}
         <div style={{ flexShrink: 0, display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <img src="/divider-nobg.png" alt="" style={{ width: "60vw", maxWidth: 300, height: "auto", objectFit: "contain", pointerEvents: "none", marginTop: -60, filter: "sepia(40%) hue-rotate(-10deg) saturate(80%) brightness(95%)" }} />
+          <img src="/divider-nobg.png" alt="" style={{ width: "60vw", maxWidth: 300, height: "auto", objectFit: "contain", pointerEvents: "none", marginTop: -60, filter: "sepia(60%) saturate(60%) hue-rotate(-5deg) brightness(85%)" }} />
         </div>
       </div>
 

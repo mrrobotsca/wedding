@@ -13,7 +13,7 @@ export default function Home() {
       padding: "0 24px",
       textAlign: "center",
     }}>
-      <p style={{ fontFamily: "'Great Vibes', cursive", fontSize: 42, color: "#C8A97E", marginBottom: 16 }}>
+      <p style={{ fontFamily: "'Great Vibes', cursive", fontSize: 42, color: "#b3985f", marginBottom: 16 }}>
         S &amp; A
       </p>
       <p style={{ fontSize: 14, fontWeight: 400, color: "#000000", letterSpacing: "0.15em", marginBottom: 8 }}>

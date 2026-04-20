@@ -225,7 +225,7 @@ function MealRadioRow({
             fontWeight: 400,
             letterSpacing: "0.1em",
             color: "#ffffff",
-            background: value === opt.value ? "#a08860" : "#C8A97E",
+            background: value === opt.value ? "#a08860" : "#b3985f",
             border: "none",
             borderRadius: 999,
             padding: "10px 18px",
@@ -339,7 +339,7 @@ export default function RSVPSection({ lang, guest: guestProp, content }: RSVPSec
 
         {/* Header */}
         <motion.p
-          style={{ fontFamily: FONT, fontSize: 32, fontWeight: 400, color: "#000000", letterSpacing: "0.5em", textTransform: "uppercase", textDecoration: "underline", textDecorationColor: "#C8A97E", textUnderlineOffset: 6, paddingBottom: 48 }}
+          style={{ fontFamily: FONT, fontSize: 32, fontWeight: 400, color: "#000000", letterSpacing: "0.5em", textTransform: "uppercase", textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 6, paddingBottom: 48 }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -350,7 +350,7 @@ export default function RSVPSection({ lang, guest: guestProp, content }: RSVPSec
 
         {/* Subtitle */}
         <motion.p
-          style={{ fontFamily: FONT_SCRIPT, fontSize: 29, color: "#C8A97E", letterSpacing: "0.05em", paddingBottom: 40 }}
+          style={{ fontFamily: FONT_SCRIPT, fontSize: 29, color: "#b3985f", letterSpacing: "0.05em", paddingBottom: 40 }}
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -420,7 +420,7 @@ export default function RSVPSection({ lang, guest: guestProp, content }: RSVPSec
                         fontWeight: 400,
                         letterSpacing: "0.05em",
                         color: "#ffffff",
-                        background: "#C8A97E",
+                        background: "#b3985f",
                         border: "none",
                         borderRadius: 999,
                         padding: "12px 12px",
@@ -472,7 +472,7 @@ export default function RSVPSection({ lang, guest: guestProp, content }: RSVPSec
                           fontWeight: 400,
                           letterSpacing: "0.1em",
                           color: "#ffffff",
-                          background: "#C8A97E",
+                          background: "#b3985f",
                           border: "none",
                           borderRadius: 999,
                           padding: "14px 40px",
@@ -609,7 +609,7 @@ export default function RSVPSection({ lang, guest: guestProp, content }: RSVPSec
                           fontWeight: 400,
                           letterSpacing: "0.1em",
                           color: "#ffffff",
-                          background: "#C8A97E",
+                          background: "#b3985f",
                           border: "none",
                           borderRadius: 999,
                           padding: "14px 40px",
@@ -629,7 +629,7 @@ export default function RSVPSection({ lang, guest: guestProp, content }: RSVPSec
 
       {/* BOX 3: Divider */}
       <div style={{ flexShrink: 0, display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 10, marginTop: 30 }}>
-        <img src="/divider-nobg.png" alt="" style={{ width: "60vw", maxWidth: 300, height: "auto", objectFit: "contain", pointerEvents: "none", marginTop: -60, filter: "sepia(40%) hue-rotate(-10deg) saturate(80%) brightness(95%)" }} />
+        <img src="/divider-nobg.png" alt="" style={{ width: "60vw", maxWidth: 300, height: "auto", objectFit: "contain", pointerEvents: "none", marginTop: -60, filter: "sepia(60%) saturate(60%) hue-rotate(-5deg) brightness(85%)" }} />
       </div>
     </section>
   );

@@ -142,7 +142,7 @@ function OrDivider({ text, delay }: { text: string; delay: number }) {
         fontSize: 19,
         fontWeight: 400,
         fontStyle: "italic",
-        color: "#C8A97E",
+        color: "#b3985f",
         padding: "10px 0",
         textAlign: "center",
       }}
@@ -202,7 +202,7 @@ export default function MenuSection({ lang, content }: MenuSectionProps) {
               letterSpacing: "0.5em",
               textTransform: "uppercase",
               textDecoration: "underline",
-              textDecorationColor: "#C8A97E",
+              textDecorationColor: "#b3985f",
               textUnderlineOffset: 6,
             }}
           >
@@ -218,7 +218,7 @@ export default function MenuSection({ lang, content }: MenuSectionProps) {
           style={{
             fontFamily: "'Great Vibes', cursive",
             fontSize: 28,
-            color: "#C8A97E",
+            color: "#b3985f",
             letterSpacing: "0.05em",
             marginTop: 40,
             paddingBottom: 6,
@@ -240,7 +240,7 @@ export default function MenuSection({ lang, content }: MenuSectionProps) {
           style={{
             fontFamily: "'Great Vibes', cursive",
             fontSize: 28,
-            color: "#C8A97E",
+            color: "#b3985f",
             letterSpacing: "0.05em",
             paddingBottom: 6,
           }}
@@ -267,7 +267,7 @@ export default function MenuSection({ lang, content }: MenuSectionProps) {
           style={{
             fontFamily: "'Great Vibes', cursive",
             fontSize: 28,
-            color: "#C8A97E",
+            color: "#b3985f",
             letterSpacing: "0.05em",
             paddingBottom: 6,
           }}
@@ -299,7 +299,7 @@ export default function MenuSection({ lang, content }: MenuSectionProps) {
 
       {/* BOX 3: Divider */}
       <div style={{ flexShrink: 0, display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 10, marginTop: 30 }}>
-        <img src="/divider-nobg.png" alt="" style={{ width: "60vw", maxWidth: 300, height: "auto", objectFit: "contain", pointerEvents: "none", marginTop: -60, filter: "sepia(40%) hue-rotate(-10deg) saturate(80%) brightness(95%)" }} />
+        <img src="/divider-nobg.png" alt="" style={{ width: "60vw", maxWidth: 300, height: "auto", objectFit: "contain", pointerEvents: "none", marginTop: -60, filter: "sepia(60%) saturate(60%) hue-rotate(-5deg) brightness(85%)" }} />
       </div>
     </section>
   );
