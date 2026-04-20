@@ -168,7 +168,7 @@ export default function MenuSection({ lang, content }: MenuSectionProps) {
 
   return (
     <section
-      style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "center", overflow: "hidden", padding: "1vh 5vw 2vh", background: "transparent", minHeight: "100vh", boxSizing: "border-box" }}
+      style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "center", overflow: "hidden", padding: "1vh 5vw calc(2vh - 8px)", background: "transparent", minHeight: "100vh", boxSizing: "border-box" }}
     >
       <div style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", width: 96, height: 1, background: "linear-gradient(90deg, transparent, #9f9f9d, transparent)", opacity: 0.3 }} />
 
