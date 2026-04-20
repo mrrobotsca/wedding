@@ -175,7 +175,7 @@ export default function MenuSection({ lang, content }: MenuSectionProps) {
       {/* BOX 1: Logo */}
       <div style={{ flexShrink: 0, display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 10 }}>
         <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}>
-          <img src="/newlogo.png" alt="" style={{ width: "auto", height: "clamp(140px, 22vh, 220px)", objectFit: "contain", marginBottom: -30 }} />
+          <img src="/newlogo.png" alt="" style={{ width: "auto", height: "clamp(130px, 21vh, 210px)", objectFit: "contain", marginBottom: -30 }} />
         </motion.div>
       </div>
 

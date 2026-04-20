@@ -326,7 +326,7 @@ export default function RSVPSection({ lang, guest: guestProp, content }: RSVPSec
             alt="Wedding Logo"
             style={{
               width: "auto",
-              height: "clamp(140px, 22vh, 220px)",
+              height: "clamp(130px, 21vh, 210px)",
               objectFit: "contain",
               marginBottom: -30,
             }}
