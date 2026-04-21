@@ -47,7 +47,7 @@ export default function CountdownSection({ lang, content }: CountdownSectionProp
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", maxWidth: "85vw", width: "100%", position: "relative", zIndex: 10 }}>
         {/* Logo */}
         <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}>
-          <img src="/newlogo.png" alt="" style={{ width: "auto", height: r(135, 215), objectFit: "contain", marginBottom: r(33, 49), marginTop: 20 }} />
+          <img src="/newlogo.png" alt="" style={{ width: "auto", height: "clamp(115px, 19vh, 195px)", objectFit: "contain", marginTop: 10, marginBottom: 25 }} />
         </motion.div>
 
         {/* Header */}
