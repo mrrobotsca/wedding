@@ -69,7 +69,7 @@ export default function EnvelopeIntro({ onComplete }: EnvelopeIntroProps) {
         >
           <video
             ref={videoRef}
-            src="/intro.MP4"
+            src="/envelop_video.mp4"
             muted
             playsInline
             onEnded={handleVideoEnd}
