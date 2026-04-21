@@ -54,7 +54,7 @@ export default function LocationSection({ lang, content }: LocationSectionProps)
         {/* BOX 1: Logo */}
         <div style={{ flexShrink: 0, display: "flex", flexDirection: "column", alignItems: "center",  }}>
           <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}>
-            <img src="/newlogo.png" alt="" style={{ width: "auto", height: "clamp(115px, 19vh, 195px)", objectFit: "contain", marginTop: 10, marginBottom: 25 }} />
+            <img src="/newlogo.png" alt="" style={{ width: "auto", height: "clamp(115px, 19vh, 195px)", objectFit: "contain", marginTop: -8, marginBottom: 25 }} />
           </motion.div>
         </div>
 
@@ -62,7 +62,7 @@ export default function LocationSection({ lang, content }: LocationSectionProps)
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", flex: 1, width: "100%", padding: "10px 0",  }}>
 
           {/* Header (top of box 2, no padding) */}
-          <motion.p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(22, 25), fontWeight: 400, color: "#000000", letterSpacing: "0.5em", textTransform: "uppercase", textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 6 }}
+          <motion.p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(22, 25), fontWeight: 400, color: "#000000", letterSpacing: "0.5em", textTransform: "uppercase", textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 6, paddingBottom: 10 }}
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
             {header}
           </motion.p>
@@ -85,7 +85,7 @@ export default function LocationSection({ lang, content }: LocationSectionProps)
             </motion.p>
 
             {/* Address + Date */}
-            <motion.div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}
+            <motion.div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4, marginTop: 15 }}
               initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.4 }}>
               <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(18, 21), fontWeight: 400, color: "#000000", letterSpacing: "0.24em" }}>
                 {address}
@@ -96,14 +96,14 @@ export default function LocationSection({ lang, content }: LocationSectionProps)
             </motion.div>
 
             {/* Description */}
-            <motion.p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(10, 13), fontWeight: 300, color: "#000000", lineHeight: 1.8, maxWidth: 320, textAlign: "center" }}
+            <motion.p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(10, 13), fontWeight: 300, color: "#000000", lineHeight: 1.8, maxWidth: 320, textAlign: "center", marginTop: 30 }}
               initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.6 }}>
               {description}
             </motion.p>
           </div>
 
           {/* Buttons (bottom of box 2, no padding) */}
-          <motion.div style={{ display: "flex", alignItems: "center", gap: r(8, 16), justifyContent: "center" }}
+          <motion.div style={{ display: "flex", alignItems: "center", gap: r(8, 16), justifyContent: "center", marginTop: 30 }}
             initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.8 }}>
             <a href={mapsUrl} target="_blank" rel="noopener noreferrer"
               style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(12, 14), fontWeight: 700, letterSpacing: "0.1em", color: "#ffffff", background: "#b3985f", border: "none", borderRadius: 999, padding: `${r(10, 14)} ${r(14, 20)}`, width: 170, maxWidth: "42vw", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, textDecoration: "none", overflow: "hidden", whiteSpace: "nowrap" }}>

@@ -79,9 +79,9 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
 
         {/* BOX 2: All content equally spaced */}
         {/* Spacer to push text under chandelier (55% of height) */}
-        <div style={{ flexShrink: 0, height: "45vh" }} />
+        <div style={{ flexShrink: 0, height: "calc(45vh + 20px)" }} />
 
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-evenly", textAlign: "center", flex: 1, width: "100%", padding: "0", zIndex: 10 }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", textAlign: "center", flex: 1, width: "100%", padding: "0", zIndex: 10, gap: 15 }}>
 
           {/* Dear Guest */}
           {guestName && (
@@ -97,7 +97,7 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
           )}
 
           {/* Names + Headline grouped */}
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 15 }}>
             <motion.div
               style={{ display: "flex", alignItems: "center", justifyContent: "center", marginLeft: "-0.1em" }}
               initial={{ opacity: 0, y: 20 }}
@@ -123,7 +123,7 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
 
           {/* Save the Date + Date */}
           <motion.div
-            style={{ textAlign: "center" }}
+            style={{ textAlign: "center", marginTop: -15 }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 2 }}
@@ -131,7 +131,7 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
             <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 400, fontSize: 20, color: "#000000", letterSpacing: "0.15em" }}>
               {saveTheDate}
             </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, fontSize: 16, color: "#b3985f", letterSpacing: "0.15em", marginTop: 4, textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 4 }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, fontSize: 16, color: "#b3985f", letterSpacing: "0.15em", marginTop: 15, textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 4 }}>
               {date}
             </p>
           </motion.div>

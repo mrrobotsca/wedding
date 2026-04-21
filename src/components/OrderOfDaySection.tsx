@@ -36,7 +36,7 @@ export default function OrderOfDaySection({ lang, content }: OrderOfDaySectionPr
   const items = content?.[lang]?.items || t.items;
 
   return (
-    <section style={{ ...sectionBase, justifyContent: "space-between", padding: 0, overflow: "hidden" }}>
+    <section style={{ ...sectionBase, justifyContent: "space-between", padding: 0, height: "auto", minHeight: "100vh" }}>
       <div style={topBorder} />
 
       <div style={{
@@ -47,7 +47,7 @@ export default function OrderOfDaySection({ lang, content }: OrderOfDaySectionPr
         {/* BOX 1: Logo */}
         <div style={{ flexShrink: 0, display: "flex", flexDirection: "column", alignItems: "center" }}>
           <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}>
-            <img src="/newlogo.png" alt="" style={{ width: "auto", height: "clamp(115px, 19vh, 195px)", objectFit: "contain", marginTop: 10, marginBottom: 25 }} />
+            <img src="/newlogo.png" alt="" style={{ width: "auto", height: "clamp(115px, 19vh, 195px)", objectFit: "contain", marginTop: -35, marginBottom: 25 }} />
           </motion.div>
         </div>
 
@@ -55,7 +55,7 @@ export default function OrderOfDaySection({ lang, content }: OrderOfDaySectionPr
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", flex: 1, width: "100%", padding: "10px 0" }}>
 
           {/* Header (top of box 2) */}
-          <motion.p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(22, 25), fontWeight: 400, color: "#000000", letterSpacing: "0.5em", textTransform: "uppercase", textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 6 }}
+          <motion.p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(22, 25), fontWeight: 400, color: "#000000", letterSpacing: "0.5em", textTransform: "uppercase", textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 6, paddingBottom: 10 }}
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
             {header}
           </motion.p>

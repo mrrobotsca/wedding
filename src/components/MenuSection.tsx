@@ -175,7 +175,7 @@ export default function MenuSection({ lang, content }: MenuSectionProps) {
       {/* BOX 1: Logo */}
       <div style={{ flexShrink: 0, display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 10 }}>
         <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}>
-          <img src="/newlogo.png" alt="" style={{ width: "auto", height: "clamp(115px, 19vh, 195px)", objectFit: "contain", marginTop: 45, marginBottom: 25 }} />
+          <img src="/newlogo.png" alt="" style={{ width: "auto", height: "clamp(115px, 19vh, 195px)", objectFit: "contain", marginTop: -8, marginBottom: 25 }} />
         </motion.div>
       </div>
 
@@ -257,7 +257,6 @@ export default function MenuSection({ lang, content }: MenuSectionProps) {
         <DishBlock name={d.salmon.name} desc={d.salmon.desc} delay={0.45} />
         <OrDivider text={orText} delay={0.5} />
         <DishBlock name={d.filet.name} desc={d.filet.desc} delay={0.55} />
-        <OrDivider text={orText} delay={0.6} />
         <DishBlock name={d.risotto.name} desc={d.risotto.desc} delay={0.65} />
 
         <Divider />

@@ -328,7 +328,7 @@ export default function RSVPSection({ lang, guest: guestProp, content }: RSVPSec
               width: "auto",
               height: "clamp(115px, 19vh, 195px)",
               objectFit: "contain",
-              marginTop: 10, marginBottom: 25,
+              marginTop: -8, marginBottom: 25,
             }}
           />
         </motion.div>
@@ -339,7 +339,7 @@ export default function RSVPSection({ lang, guest: guestProp, content }: RSVPSec
 
         {/* Header */}
         <motion.p
-          style={{ fontFamily: FONT, fontSize: 32, fontWeight: 400, color: "#000000", letterSpacing: "0.5em", textTransform: "uppercase", textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 6, paddingBottom: 48 }}
+          style={{ fontFamily: FONT, fontSize: 32, fontWeight: 400, color: "#000000", letterSpacing: "0.5em", textTransform: "uppercase", textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 6, paddingBottom: 58 }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

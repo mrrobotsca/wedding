@@ -117,9 +117,20 @@ export default function InvitePage() {
     );
   }
 
-  // Full wedding site — continuous scroll with fixed background
+  // Full wedding site — snap-scroll: each section locks to one viewport
   return (
     <main style={{ position: "relative", minHeight: "100vh" }}>
+      <style>{`
+        html, body {
+          scroll-snap-type: y mandatory;
+          scroll-behavior: smooth;
+          overflow-y: scroll;
+        }
+        [data-snap] {
+          scroll-snap-align: start;
+          scroll-snap-stop: always;
+        }
+      `}</style>
       {/* Fixed background that stays in place */}
       <div style={{
         position: "fixed", inset: 0, zIndex: 0,
@@ -142,25 +153,25 @@ export default function InvitePage() {
 
       {/* Scrollable content over fixed background */}
       <div style={{ position: "relative", zIndex: 1 }}>
-        <div id="section-intro">
+        <div id="section-intro" data-snap>
           <IntroSection guestName={guest.greetingName} lang={lang} layout={DEFAULT_INTRO_LAYOUT} content={content?.intro} />
         </div>
-        <div id="section-location">
+        <div id="section-location" data-snap>
           <LocationSection lang={lang} content={content?.location} />
         </div>
-        <div id="section-dresscode">
+        <div id="section-dresscode" data-snap>
           <DressCodeSection lang={lang} content={content?.dresscode} />
         </div>
-        <div id="section-countdown">
+        <div id="section-countdown" data-snap>
           <CountdownSection lang={lang} content={content?.countdown} />
         </div>
-        <div id="section-order">
+        <div id="section-order" data-snap>
           <OrderOfDaySection lang={lang} content={content?.orderOfDay} />
         </div>
-        <div id="section-menu">
+        <div id="section-menu" data-snap>
           <MenuSection lang={lang} content={content?.menu} />
         </div>
-        <div id="section-rsvp">
+        <div id="section-rsvp" data-snap>
           <RSVPSection lang={lang} guest={guest} content={content?.rsvp} />
         </div>
       </div>
