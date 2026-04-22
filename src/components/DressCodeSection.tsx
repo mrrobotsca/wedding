@@ -29,7 +29,6 @@ export default function DressCodeSection({ lang, content }: DressCodeSectionProp
   const header = content?.[lang]?.header || t.header;
   const line1 = content?.[lang]?.line1 || t.line1;
   const line2 = content?.[lang]?.line2 || t.line2;
-  const line3 = content?.[lang]?.line3 || t.line3;
 
   return (
     <section style={{ ...sectionBase, justifyContent: "space-between", padding: 0, overflow: "hidden" }}>
@@ -80,11 +79,6 @@ export default function DressCodeSection({ lang, content }: DressCodeSectionProp
             </motion.p>
           </div>
 
-          {/* Line 3 (bottom of box 2) */}
-          <motion.p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(16, 21), fontWeight: 300, color: "#000000", lineHeight: 1.8, fontStyle: "italic", textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 4 }}
-            initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.6 }}>
-            {line3}
-          </motion.p>
         </div>
 
         {/* BOX 3: Divider */}
