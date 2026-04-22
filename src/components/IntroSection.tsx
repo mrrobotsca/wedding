@@ -114,9 +114,9 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.4 }}
           >
-            <span style={{ fontFamily: "'Edwardian Script ITC', 'Mrs Saint Delafield', cursive", fontSize: "clamp(15px, 4vw, 29px)", color: "#b3985f", letterSpacing: "0.1em" }}>{name1}</span>
-            <span style={{ fontFamily: "'Edwardian Script ITC', 'Mrs Saint Delafield', cursive", fontSize: "clamp(15px, 4vw, 29px)", color: "#b3985f", letterSpacing: "0.1em", margin: "0 8px" }}>&</span>
-            <span style={{ fontFamily: "'Edwardian Script ITC', 'Mrs Saint Delafield', cursive", fontSize: "clamp(15px, 4vw, 29px)", color: "#b3985f", letterSpacing: "0.1em" }}>{name2}</span>
+            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(15px, 4vw, 29px)", color: "#b3985f", letterSpacing: "0.1em" }}>{name1}</span>
+            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(15px, 4vw, 29px)", color: "#b3985f", letterSpacing: "0.1em", margin: "0 8px" }}>&</span>
+            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(15px, 4vw, 29px)", color: "#b3985f", letterSpacing: "0.1em" }}>{name2}</span>
           </motion.div>
 
           {/* Date */}
