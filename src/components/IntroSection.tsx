@@ -46,7 +46,6 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
   const defaults = TEXT[lang];
   const c = content?.[lang];
   const greeting = c?.greeting ? c.greeting.replace("{name}", guestName || "") : defaults.greeting(guestName || "");
-  const headline = c?.headline || defaults.headline;
   const saveTheDate = c?.saveTheDate || defaults.saveTheDate;
   const date = c?.date || defaults.date;
   const name1 = content?.namesLine1 || "Sarah";
@@ -96,30 +95,17 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
             </motion.div>
           )}
 
-          {/* Headline + Names grouped */}
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 15 }}>
-            <motion.div
-              style={{ textAlign: "center" }}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.8 }}
-            >
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 400, fontSize: 20, color: "#000000", letterSpacing: "0.15em" }}>
-                {headline}
-              </p>
-            </motion.div>
-
-            <motion.div
-              style={{ display: "flex", alignItems: "center", justifyContent: "center", marginLeft: "-0.1em" }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.4 }}
-            >
-              <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: "clamp(40px, 7vw, 54px)", color: "#b3985f", letterSpacing: "0.1em" }}>{name1}</span>
-              <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: "clamp(40px, 7vw, 54px)", color: "#b3985f", letterSpacing: "0.1em", margin: "0 8px" }}>&</span>
-              <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: "clamp(40px, 7vw, 54px)", color: "#b3985f", letterSpacing: "0.1em" }}>{name2}</span>
-            </motion.div>
-          </div>
+          {/* Names */}
+          <motion.div
+            style={{ display: "flex", alignItems: "center", justifyContent: "center", marginLeft: "-0.1em" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.4 }}
+          >
+            <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: "clamp(40px, 7vw, 54px)", color: "#b3985f", letterSpacing: "0.1em" }}>{name1}</span>
+            <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: "clamp(40px, 7vw, 54px)", color: "#b3985f", letterSpacing: "0.1em", margin: "0 8px" }}>&</span>
+            <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: "clamp(40px, 7vw, 54px)", color: "#b3985f", letterSpacing: "0.1em" }}>{name2}</span>
+          </motion.div>
 
           {/* Save the Date + Date */}
           <motion.div
