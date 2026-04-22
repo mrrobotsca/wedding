@@ -95,6 +95,18 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
             </motion.div>
           )}
 
+          {/* Save the Date */}
+          <motion.div
+            style={{ textAlign: "center" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+          >
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 400, fontSize: 20, color: "#000000", letterSpacing: "0.15em" }}>
+              {saveTheDate}
+            </p>
+          </motion.div>
+
           {/* Names */}
           <motion.div
             style={{ display: "flex", alignItems: "center", justifyContent: "center", marginLeft: "-0.1em" }}
@@ -107,17 +119,14 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
             <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: "clamp(40px, 7vw, 54px)", color: "#b3985f", letterSpacing: "0.1em" }}>{name2}</span>
           </motion.div>
 
-          {/* Save the Date + Date */}
+          {/* Date */}
           <motion.div
-            style={{ textAlign: "center", marginTop: -15 }}
+            style={{ textAlign: "center" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 2 }}
           >
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 400, fontSize: 20, color: "#000000", letterSpacing: "0.15em" }}>
-              {saveTheDate}
-            </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, fontSize: 16, color: "#b3985f", letterSpacing: "0.15em", marginTop: 15, textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 4 }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, fontSize: 16, color: "#b3985f", letterSpacing: "0.15em", textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 4 }}>
               {date}
             </p>
           </motion.div>
