@@ -71,16 +71,16 @@ export default function OrderOfDaySection({ lang, content }: OrderOfDaySectionPr
 
                 <div style={{ width: r(4, 6), height: r(4, 6), borderRadius: "50%", background: "#000000", opacity: 0.6, marginBottom: r(3, 6) }} />
 
-                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(28, 31), fontWeight: 500, color: "#000000", letterSpacing: "0.2em", textTransform: "uppercase", paddingBottom: 10 }}>
+                <p style={{ fontFamily: "'EB Garamond', serif", fontSize: r(15, 16), fontWeight: 500, color: "#000000", letterSpacing: "0.2em", textTransform: "uppercase", paddingBottom: 10 }}>
                   {item.time}
                 </p>
 
-                <p style={{ fontFamily: "'Great Vibes', cursive", fontSize: r(38, 50), color: "#b3985f", letterSpacing: "0.05em", paddingBottom: item.desc ? 10 : 0 }}>
+                <p style={{ fontFamily: "'EB Garamond', serif", fontSize: r(15, 25), color: "#b3985f", letterSpacing: "0.05em", paddingBottom: item.desc ? 10 : 0 }}>
                   {item.title}
                 </p>
 
                 {item.desc && (
-                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(29, 32), fontWeight: 300, color: "#000000", maxWidth: 240 }}>
+                  <p style={{ fontFamily: "'EB Garamond', serif", fontSize: r(15, 16), fontWeight: 300, color: "#000000", maxWidth: 240 }}>
                     {item.desc}
                   </p>
                 )}

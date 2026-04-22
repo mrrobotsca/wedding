@@ -126,7 +126,7 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 2 }}
           >
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, fontSize: 16, color: "#b3985f", letterSpacing: "0.15em", textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 4 }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, fontSize: 16, color: "#000000", letterSpacing: "0.15em", textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 4 }}>
               {date}
             </p>
           </motion.div>
