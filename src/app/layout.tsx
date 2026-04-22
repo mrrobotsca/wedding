@@ -19,7 +19,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Allura&family=Dancing+Script:wght@400;500;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Allura&family=Dancing+Script:wght@400;500;600&family=Mrs+Saint+Delafield&display=swap"
           rel="stylesheet"
         />
       </head>
