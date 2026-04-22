@@ -107,16 +107,16 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
             </p>
           </motion.div>
 
-          {/* Names */}
+          {/* Names stacked on three lines with & in the middle */}
           <motion.div
-            style={{ display: "flex", alignItems: "center", justifyContent: "center", marginLeft: "-0.1em" }}
+            style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.4 }}
           >
-            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(15px, 4vw, 29px)", color: "#b3985f", letterSpacing: "0.1em" }}>{name1}</span>
-            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(15px, 4vw, 29px)", color: "#b3985f", letterSpacing: "0.1em", margin: "0 8px" }}>&</span>
-            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(15px, 4vw, 29px)", color: "#b3985f", letterSpacing: "0.1em" }}>{name2}</span>
+            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(55px, 8vw, 69px)", color: "#b3985f", letterSpacing: "0.1em", lineHeight: 1.1 }}>{name1}</span>
+            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(55px, 8vw, 69px)", color: "#b3985f", letterSpacing: "0.1em", lineHeight: 1.1 }}>&</span>
+            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(55px, 8vw, 69px)", color: "#b3985f", letterSpacing: "0.1em", lineHeight: 1.1 }}>{name2}</span>
           </motion.div>
 
           {/* Date */}
