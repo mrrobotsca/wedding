@@ -4,6 +4,15 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "S&A Wedding",
   description: "You are cordially invited to celebrate our wedding day",
+  icons: {
+    icon: "/newlogo.png",
+    apple: "/newlogo.png",
+  },
+  openGraph: {
+    title: "S&A Wedding",
+    description: "You are cordially invited to celebrate our wedding day",
+    images: ["/newlogo.png"],
+  },
 };
 
 export default function RootLayout({
