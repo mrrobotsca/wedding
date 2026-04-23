@@ -48,7 +48,7 @@ export default function LocationSection({ lang, content }: LocationSectionProps)
 
       <div style={{
         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between",
-        width: "100%", height: "100%", padding: "1vh clamp(28px, 8vw, 48px) calc(2vh - 8px)", position: "relative", zIndex: 10, boxSizing: "border-box",
+        width: "100%", height: "100%", padding: "1vh clamp(40px, 10vw, 60px) calc(2vh - 8px)", position: "relative", zIndex: 10, boxSizing: "border-box",
       }}>
 
         {/* BOX 1: Logo */}
@@ -103,15 +103,15 @@ export default function LocationSection({ lang, content }: LocationSectionProps)
           </div>
 
           {/* Buttons (bottom of box 2, no padding) */}
-          <motion.div style={{ display: "flex", alignItems: "center", gap: r(8, 16), justifyContent: "center", marginTop: 30 }}
+          <motion.div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: r(8, 16), justifyContent: "center", marginTop: 30, width: "100%" }}
             initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.8 }}>
             <a href={mapsUrl} target="_blank" rel="noopener noreferrer"
-              style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(12, 14), fontWeight: 700, letterSpacing: "0.1em", color: "#ffffff", background: "#b3985f", border: "none", borderRadius: 999, padding: `${r(10, 14)} ${r(14, 20)}`, width: 170, maxWidth: "42vw", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, textDecoration: "none", overflow: "hidden", whiteSpace: "nowrap" }}>
+              style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(12, 14), fontWeight: 700, letterSpacing: "0.1em", color: "#ffffff", background: "#b3985f", border: "none", borderRadius: 999, padding: `${r(10, 14)} ${r(14, 20)}`, minWidth: 140, maxWidth: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, textDecoration: "none", overflow: "hidden", whiteSpace: "nowrap" }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></svg>
               <span style={{ fontSize: `min(${r(10, 12)}, 3vw)` }}>{directions}</span>
             </a>
             <a href={calendarUrl} target="_blank" rel="noopener noreferrer"
-              style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(12, 14), fontWeight: 700, letterSpacing: "0.1em", color: "#ffffff", background: "#b3985f", border: "none", borderRadius: 999, padding: `${r(10, 14)} ${r(14, 20)}`, width: 170, maxWidth: "42vw", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, textDecoration: "none", overflow: "hidden", whiteSpace: "nowrap" }}>
+              style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(12, 14), fontWeight: 700, letterSpacing: "0.1em", color: "#ffffff", background: "#b3985f", border: "none", borderRadius: 999, padding: `${r(10, 14)} ${r(14, 20)}`, minWidth: 140, maxWidth: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, textDecoration: "none", overflow: "hidden", whiteSpace: "nowrap" }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
               <span style={{ fontSize: `min(${r(10, 12)}, 3vw)` }}>{addCalendar}</span>
             </a>

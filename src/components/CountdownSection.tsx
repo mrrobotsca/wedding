@@ -41,7 +41,7 @@ export default function CountdownSection({ lang, content }: CountdownSectionProp
   ];
 
   return (
-    <section style={{ ...sectionBase, justifyContent: "flex-start", padding: "1vh clamp(28px, 8vw, 48px) calc(2vh - 8px)" }}>
+    <section style={{ ...sectionBase, justifyContent: "flex-start", padding: "1vh clamp(40px, 10vw, 60px) calc(2vh - 8px)" }}>
       <div style={topBorder} />
 
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", maxWidth: "85vw", width: "100%", position: "relative", zIndex: 10 }}>
@@ -63,20 +63,20 @@ export default function CountdownSection({ lang, content }: CountdownSectionProp
         </motion.p>
 
         {/* Counter */}
-        <motion.div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: r(6, 24), border: "1px solid #b3985f", padding: "5px 13px", borderRadius: 4 }}
+        <motion.div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: r(3, 16), border: "1px solid #b3985f", padding: "5px 10px", borderRadius: 4, maxWidth: "100%" }}
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.5 }}>
           {units.map((unit, i) => (
-            <div key={i} style={{ display: "flex", alignItems: "center", gap: r(6, 24) }}>
+            <div key={i} style={{ display: "flex", alignItems: "center", gap: r(3, 16) }}>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(44, 56), fontWeight: 300, color: "#000000", lineHeight: 1, minWidth: r(56, 70), textAlign: "center" }}>
+                <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(26, 56), fontWeight: 300, color: "#000000", lineHeight: 1, minWidth: r(32, 70), textAlign: "center" }}>
                   {mounted ? String(unit.value).padStart(2, "0") : "00"}
                 </span>
-                <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: r(21, 23), fontWeight: 500, color: "#b3985f", letterSpacing: "0.05em", marginTop: r(4, 8) }}>
+                <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: r(14, 23), fontWeight: 500, color: "#b3985f", letterSpacing: "0.05em", marginTop: r(4, 8) }}>
                   {unit.label}
                 </span>
               </div>
               {i < units.length - 1 && (
-                <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(18, 28), fontWeight: 200, color: "#d0d0ce", marginBottom: r(10, 14) }}>:</span>
+                <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: r(14, 28), fontWeight: 200, color: "#d0d0ce", marginBottom: r(10, 14) }}>:</span>
               )}
             </div>
           ))}

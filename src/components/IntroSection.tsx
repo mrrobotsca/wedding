@@ -73,14 +73,14 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
 
       <div style={{
         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between",
-        width: "100%", height: "100%", padding: "1vh clamp(28px, 8vw, 48px) calc(2vh - 8px)", position: "relative", zIndex: 10, boxSizing: "border-box",
+        width: "100%", height: "100%", padding: "1vh clamp(40px, 10vw, 60px) calc(2vh - 8px)", position: "relative", zIndex: 10, boxSizing: "border-box",
       }}>
 
         {/* BOX 2: All content equally spaced */}
         {/* Spacer to push text under chandelier (55% of height) */}
-        <div style={{ flexShrink: 0, height: "calc(45vh + 20px)" }} />
+        <div style={{ flexShrink: 0, height: "clamp(260px, 42vh, 420px)" }} />
 
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", textAlign: "center", flex: 1, width: "100%", padding: "0", zIndex: 10, gap: 15 }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", textAlign: "center", flex: 1, width: "100%", padding: "0", zIndex: 10, gap: "clamp(8px, 1.8vh, 15px)" }}>
 
           {/* Dear Guest */}
           {guestName && (
@@ -89,7 +89,7 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 20, fontWeight: 400, color: "#000000", letterSpacing: "0.15em", textAlign: "center" }}>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "clamp(14px, 4.5vw, 20px)", fontWeight: 400, color: "#000000", letterSpacing: "0.15em", textAlign: "center" }}>
                 {greeting}
               </p>
             </motion.div>
@@ -102,7 +102,7 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
           >
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 400, fontSize: 20, color: "#000000", letterSpacing: "0.15em" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 400, fontSize: "clamp(14px, 4.5vw, 20px)", color: "#000000", letterSpacing: "0.15em" }}>
               {saveTheDate}
             </p>
           </motion.div>
@@ -114,9 +114,9 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.4 }}
           >
-            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(40px, 6vw, 54px)", color: "#b3985f", letterSpacing: "0.1em", lineHeight: 1.1 }}>{name1}</span>
-            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(40px, 6vw, 54px)", color: "#b3985f", letterSpacing: "0.1em", lineHeight: 1.1 }}>&</span>
-            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(40px, 6vw, 54px)", color: "#b3985f", letterSpacing: "0.1em", lineHeight: 1.1 }}>{name2}</span>
+            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(30px, 5.5vw, 52px)", color: "#b3985f", letterSpacing: "0.1em", lineHeight: 1.1 }}>{name1}</span>
+            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(30px, 5.5vw, 52px)", color: "#b3985f", letterSpacing: "0.1em", lineHeight: 1.1 }}>&</span>
+            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(30px, 5.5vw, 52px)", color: "#b3985f", letterSpacing: "0.1em", lineHeight: 1.1 }}>{name2}</span>
           </motion.div>
 
           {/* Date */}
@@ -126,7 +126,7 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 2 }}
           >
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, fontSize: 16, color: "#000000", letterSpacing: "0.15em", textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 4 }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, fontSize: "clamp(13px, 3.5vw, 16px)", color: "#000000", letterSpacing: "0.15em", textDecoration: "underline", textDecorationColor: "#b3985f", textUnderlineOffset: 4 }}>
               {date}
             </p>
           </motion.div>
