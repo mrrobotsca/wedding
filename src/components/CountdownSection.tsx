@@ -41,7 +41,7 @@ export default function CountdownSection({ lang, content }: CountdownSectionProp
   ];
 
   return (
-    <section style={{ ...sectionBase, justifyContent: "flex-start", paddingTop: "1vh" }}>
+    <section style={{ ...sectionBase, justifyContent: "flex-start", padding: "1vh clamp(28px, 8vw, 48px) calc(2vh - 8px)" }}>
       <div style={topBorder} />
 
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", maxWidth: "85vw", width: "100%", position: "relative", zIndex: 10 }}>

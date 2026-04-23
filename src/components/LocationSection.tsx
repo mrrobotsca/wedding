@@ -48,7 +48,7 @@ export default function LocationSection({ lang, content }: LocationSectionProps)
 
       <div style={{
         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between",
-        width: "100%", height: "100%", padding: "1vh 5vw calc(2vh - 8px)", position: "relative", zIndex: 10, boxSizing: "border-box",
+        width: "100%", height: "100%", padding: "1vh clamp(28px, 8vw, 48px) calc(2vh - 8px)", position: "relative", zIndex: 10, boxSizing: "border-box",
       }}>
 
         {/* BOX 1: Logo */}
