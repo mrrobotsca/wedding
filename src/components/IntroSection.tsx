@@ -114,9 +114,9 @@ export default function IntroSection({ guestName, lang, content }: IntroSectionP
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.4 }}
           >
-            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(55px, 8vw, 69px)", color: "#b3985f", letterSpacing: "0.1em", lineHeight: 1.1 }}>{name1}</span>
-            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(55px, 8vw, 69px)", color: "#b3985f", letterSpacing: "0.1em", lineHeight: 1.1 }}>&</span>
-            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(55px, 8vw, 69px)", color: "#b3985f", letterSpacing: "0.1em", lineHeight: 1.1 }}>{name2}</span>
+            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(40px, 6vw, 54px)", color: "#b3985f", letterSpacing: "0.1em", lineHeight: 1.1 }}>{name1}</span>
+            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(40px, 6vw, 54px)", color: "#b3985f", letterSpacing: "0.1em", lineHeight: 1.1 }}>&</span>
+            <span style={{ fontFamily: "'Allura', cursive", fontSize: "clamp(40px, 6vw, 54px)", color: "#b3985f", letterSpacing: "0.1em", lineHeight: 1.1 }}>{name2}</span>
           </motion.div>
 
           {/* Date */}

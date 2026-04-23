@@ -69,7 +69,7 @@ export default function EnvelopeIntro({ onComplete }: EnvelopeIntroProps) {
         >
           <video
             ref={videoRef}
-            src="/envelop_video.mp4"
+            src="/intro_video.mp4"
             muted
             playsInline
             onEnded={handleVideoEnd}
@@ -80,7 +80,7 @@ export default function EnvelopeIntro({ onComplete }: EnvelopeIntroProps) {
               height: "100%",
               objectFit: "fill",
               display: needsTap ? "none" : "block",
-              filter: "sepia(30%) hue-rotate(-10deg) saturate(120%) brightness(105%)",
+              filter: "none",
             }}
           />
 

@@ -75,7 +75,7 @@ export default function OrderOfDaySection({ lang, content }: OrderOfDaySectionPr
                   {item.time}
                 </p>
 
-                <p style={{ fontFamily: "'EB Garamond', serif", fontSize: r(15, 25), color: "#b3985f", letterSpacing: "0.05em", paddingBottom: item.desc ? 10 : 0 }}>
+                <p style={{ fontFamily: "'Great Vibes', cursive", fontSize: r(15, 25), color: "#b3985f", letterSpacing: "0.05em", paddingBottom: item.desc ? 10 : 0 }}>
                   {item.title}
                 </p>
 
