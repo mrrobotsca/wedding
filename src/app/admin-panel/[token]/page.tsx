@@ -187,22 +187,117 @@ export default function AdminPanel() {
 // ── Overview ──
 
 function OverviewTab({ guests, rsvps, logs }: { guests: Guest[]; rsvps: EnrichedRSVP[]; logs: EnrichedLog[] }) {
+  // Build a guest lookup
+  const guestById = new Map(guests.map((g) => [g.id, g]));
+  const rsvpByGuest = new Map(rsvps.map((r) => [r.guestId, r]));
+
+  // Attending breakdown
+  const attendingRsvps = rsvps.filter((r) => r.attending);
+  const declinedRsvps = rsvps.filter((r) => !r.attending);
+
+  let attendingFamilies = 0;
+  let attendingIndividuals = 0;
+  let totalPeopleAttending = 0;
+
+  for (const r of attendingRsvps) {
+    const g = guestById.get(r.guestId);
+    if (!g) continue;
+    if (g.inviteType === "family") {
+      attendingFamilies += 1;
+      totalPeopleAttending += g.familyMembers?.length || 1;
+    } else {
+      attendingIndividuals += 1;
+      totalPeopleAttending += 1;
+      if (r.companionName?.trim()) totalPeopleAttending += 1;
+    }
+  }
+
+  const pendingGuests = guests.filter((g) => !rsvpByGuest.has(g.id));
+  const respondedGuests = guests.filter((g) => rsvpByGuest.has(g.id));
+
   const stats = [
     { label: "Total Guests", value: guests.length, color: C.accent },
-    { label: "Attending", value: rsvps.filter((r) => r.attending).length, color: C.green },
-    { label: "Declined", value: rsvps.filter((r) => !r.attending).length, color: C.red },
-    { label: "Pending", value: guests.length - rsvps.length, color: C.dimLight },
+    { label: "Attending", value: attendingRsvps.length, color: C.green },
+    { label: "Declined", value: declinedRsvps.length, color: C.red },
+    { label: "Pending", value: pendingGuests.length, color: C.dimLight },
+  ];
+
+  const peopleStats = [
+    { label: "Total People Attending", value: totalPeopleAttending, color: C.green },
+    { label: "Families Attending", value: attendingFamilies, color: C.accent },
+    { label: "Individuals Attending", value: attendingIndividuals, color: C.accent },
   ];
 
   return (
     <div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginBottom: 48 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginBottom: 24 }}>
         {stats.map((st) => (
           <div key={st.label} style={{ ...s.card, padding: 32 }}>
             <p style={{ fontSize: 11, color: C.dim, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>{st.label}</p>
             <p style={{ fontSize: 40, fontWeight: 300, color: st.color, lineHeight: 1 }}>{st.value}</p>
           </div>
         ))}
+      </div>
+
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginBottom: 48 }}>
+        {peopleStats.map((st) => (
+          <div key={st.label} style={{ ...s.card, padding: 32 }}>
+            <p style={{ fontSize: 11, color: C.dim, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>{st.label}</p>
+            <p style={{ fontSize: 40, fontWeight: 300, color: st.color, lineHeight: 1 }}>{st.value}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Live RSVP status — two columns */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 48 }}>
+        <div style={{ ...s.card, padding: 0, overflow: "hidden" }}>
+          <div style={{ padding: "18px 24px", borderBottom: `1px solid ${C.border}`, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <p style={{ fontSize: 13, fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: C.dim, margin: 0 }}>Responded</p>
+            <span style={{ fontSize: 12, color: C.dimLight }}>{respondedGuests.length} / {guests.length}</span>
+          </div>
+          <div style={{ maxHeight: 320, overflow: "auto" }}>
+            {respondedGuests.length === 0 ? (
+              <p style={{ padding: 24, fontSize: 14, color: C.dimLight }}>No responses yet</p>
+            ) : (
+              respondedGuests.map((g, i) => {
+                const r = rsvpByGuest.get(g.id);
+                const attending = r?.attending;
+                return (
+                  <div key={g.id} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 24px", borderBottom: i < respondedGuests.length - 1 ? `1px solid ${C.border}` : "none" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                      <span style={{ width: 7, height: 7, borderRadius: "50%", background: attending ? C.green : C.red, flexShrink: 0 }} />
+                      <span style={{ fontSize: 13 }}>{g.greetingName}</span>
+                      <span style={{ ...s.tag, fontSize: 9, padding: "3px 8px" }}>{g.inviteType}</span>
+                    </div>
+                    <span style={{ fontSize: 11, color: attending ? C.green : C.red, fontWeight: 500 }}>{attending ? "Yes" : "No"}</span>
+                  </div>
+                );
+              })
+            )}
+          </div>
+        </div>
+
+        <div style={{ ...s.card, padding: 0, overflow: "hidden" }}>
+          <div style={{ padding: "18px 24px", borderBottom: `1px solid ${C.border}`, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <p style={{ fontSize: 13, fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: C.dim, margin: 0 }}>Awaiting Response</p>
+            <span style={{ fontSize: 12, color: C.dimLight }}>{pendingGuests.length}</span>
+          </div>
+          <div style={{ maxHeight: 320, overflow: "auto" }}>
+            {pendingGuests.length === 0 ? (
+              <p style={{ padding: 24, fontSize: 14, color: C.dimLight }}>Everyone has responded</p>
+            ) : (
+              pendingGuests.map((g, i) => (
+                <div key={g.id} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 24px", borderBottom: i < pendingGuests.length - 1 ? `1px solid ${C.border}` : "none" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <span style={{ width: 7, height: 7, borderRadius: "50%", background: C.dimLight, flexShrink: 0 }} />
+                    <span style={{ fontSize: 13 }}>{g.greetingName}</span>
+                    <span style={{ ...s.tag, fontSize: 9, padding: "3px 8px" }}>{g.inviteType}</span>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
       </div>
 
       <p style={{ fontSize: 14, fontWeight: 500, color: C.dim, marginBottom: 20 }}>Recent Activity</p>
